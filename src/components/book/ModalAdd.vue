@@ -6,19 +6,19 @@
       <h4 v-if="book.id != ''">Editar Livro</h4>
       <div class="col s12">
         <label for="name" class="active">Nome</label>
-        <input placeholder="Nome do Livro" id="name" type="text" v-model="book.name">
+        <input placeholder="Nome do Livro" id="name" type="text" v-on:keyup.enter="$event.target.nextElementSibling.focus()" v-model="book.name">
       </div>
       <div class="col s12">
         <label for="publishing_company" class="active">Editora</label>
-        <input placeholder="Editora" id="publishing_company" type="text" v-model="book.publishing_company">
+        <input placeholder="Editora" id="publishing_company" type="text" v-on:keyup.enter="$event.target.nextElementSibling.focus()" v-model="book.publishing_company">
       </div>
       <div class="col s12">
         <label for="author" class="active">Autor</label>
-        <input placeholder="Nome do Livro" id="author" type="text" v-model="book.author">
+        <input placeholder="Nome do Livro" id="author" type="text" v-on:keyup.enter="$event.target.nextElementSibling.focus()" v-model="book.author">
       </div>
       <div class="col s12">
         <label for="identification" class="active">Código</label>
-        <input placeholder="Código" id="identification" type="text" v-model="book.identification">
+        <input placeholder="Código" id="identification" type="text" v-on:keyup.enter="$event.target.nextElementSibling.focus()" v-model="book.identification">
       </div>
     </div>
     <div class="modal-footer">
@@ -46,6 +46,15 @@ export default {
   },
   methods: {
     saveBook() {
+      if (this.book.name.toString().trim() == '') {
+        Swal({
+          type: 'warning',
+          title: 'Digite o nome do livro',
+          timer: 2000
+        })
+        return
+      }
+
       if(this.book.id == '') {
         this.$store.dispatch('saveBook', this.book)
           .then(response => {
@@ -93,6 +102,9 @@ export default {
 .modal.modal-fixed-footer {
     padding: 0;
     height: 55%;
+}
+.modal {
+  max-height: 85%;
 }
 </style>
 

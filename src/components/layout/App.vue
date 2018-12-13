@@ -2,7 +2,7 @@
   <div id="app">
 
     <div class="navbar-fixed">
-      <nav class="green darken-4">
+      <nav class="green darken-4 ">
         <div class="nav-wrapper container">
           <router-link to="/books" class="brand-logo">My Books</router-link>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -19,12 +19,12 @@
         </div>
       </nav>
     </div>
-
     <ul class="sidenav" id="mobile-demo">
-      <li><a href="sass.html">Livros</a></li>
-      <li><a href="badges.html">Assuntos</a></li>
-      <li><a @click="logout">Sair</a></li>
+      <li><router-link class="sidenav-close" to="/books">Livros</router-link></li>
+      <!-- <li><a href="badges.html">Assuntos</a></li> -->
+      <li><a @click="logout" class="sidenav-close" >Sair</a></li>
     </ul>
+
 
 
     <!-- <header> -->
@@ -74,6 +74,10 @@ export default {
 @media only screen and (max-width: 992px) {
   nav > .container {
     width: 100%;
+  }
+
+  .container {
+    width: 94%;
   }
 }
 

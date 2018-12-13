@@ -1,42 +1,21 @@
 <template>
   <div id="app">
 
-      <!-- <div class="container center-align container-login">
-        <div className="row ">
-          <div className="col s12">
-            <img class="logo-login" src="#" alt="Louvor IPB Tanabi" />
-            <h4>Louvor IPB Tanabi</h4>
-          </div>
+    <div class="container center-align container-login">
+      <div className="row ">
+        <div className="col s6 offset-s3">
+          <img class="logo-login" src="/static/icon.png" alt="Louvor IPB Tanabi" />
+          <h4>My Books</h4>
         </div>
-        <div className="row">
-          <div className="col s6 offset-s3">
-            <form>
-              <input
-                type="email"
-                placeholder="Digite o e-mail"
-              />
-              <input
-                type="password"
-                placeholder="Digite a Senha"
-              />
-              <button
-                type="submit"
-                class="btn btn-large waves-effect waves-light "
-              >
-                Entrar
-              </button>
-            </form>
-          </div>
+      </div>
+      <div className="row">
+        <div className="col s6 offset-s3">
+          <router-view></router-view>
         </div>
-      </div> -->
+      </div>
+    </div>
 
-    <header>
-      <span>Login</span>
-    </header>
-    <main>
-      <!-- <img src="./assets/logo.png" alt="Vue.js PWA"> -->
-      <router-view></router-view>
-    </main>
+
   </div>
 </template>
 
@@ -49,14 +28,23 @@ export default {
 <style>
 
 .logo-login {
-  width: 200px;
+  width: 100px;
 }
 
 .container-login {
-  padding: 50px;
-  margin-top: 60px !important;
+  padding: 25px;
+  margin-top: 18px;
   background-color: #fff;
   border-radius: 2px;
+  /* width: 50%; */
+}
+
+@media only screen and (min-width: 993px) {
+  .container-login {
+    width: 35%;
+    margin-top: 60px;
+    padding: 50px;
+  }
 }
 
 body {
