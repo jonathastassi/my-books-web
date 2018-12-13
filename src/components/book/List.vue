@@ -40,22 +40,22 @@
             <div class="card-content">
                <span class="card-title">{{ book.name }}</span>
                <div class="row no-margin-bottom" >
-                 <div class="col s3">
+                 <div class="col s4">
                    <label>Editora</label>
                  </div>
-                 <div class="col s9">
+                 <div class="col s8">
                    <span>{{ book.publishing_company }}</span>
                  </div>
-                 <div class="col s3">
+                 <div class="col s4">
                    <label>Autor</label>
                  </div>
-                 <div class="col s9">
+                 <div class="col s8">
                    <span>{{ book.author }}</span>
                  </div>
-                 <div class="col s3">
+                 <div class="col s4">
                    <label>Código</label>
                  </div>
-                 <div class="col s9">
+                 <div class="col s8">
                    <span>{{ book.identification }}</span>
                  </div>
                </div>
