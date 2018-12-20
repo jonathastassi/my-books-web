@@ -21,6 +21,7 @@ Firebase.auth().onAuthStateChanged(user =>{
 
   if (user) {
     router.push('/')
+    store.dispatch('getBooks');
   }
   else {
     router.push('/login')

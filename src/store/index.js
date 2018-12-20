@@ -13,14 +13,16 @@ export const store = new Vuex.Store({
     showModalLoading: false,
   },
   actions: {
-    login({commit, state}) {
+    login({commit, state, dispatch}) {
       return new Promise((resolve, reject) => {
         commit('toogleModalLoading', true);
         Firebase.auth().signInWithEmailAndPassword(state.user.email, state.user.password).then(user => {
           commit('setUser', user)
           commit('toogleModalLoading', false);
+          dispatch('getBooks');
           resolve(user)
-        }).catch(err => {
+        })
+        .catch(err => {
           commit('toogleModalLoading', false);
           reject(err)
         })
